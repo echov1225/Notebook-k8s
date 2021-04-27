@@ -1,0 +1,17 @@
+server:
+  port: 8761
+eureka:
+  server:
+    number-of-replication-retries: 1
+    enable-self-preservation: true
+  instance:
+    prefer-ip-address: false
+    hostname: eureka-server
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+    name: discovery-service
